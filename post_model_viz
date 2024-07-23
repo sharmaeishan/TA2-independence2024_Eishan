@@ -12,9 +12,9 @@ class PostModelViz:
         sns.scatterplot(x=cooks_d.index, y=cooks_d)
         plt.show()
 
-    def regression_line_plot(df, x, y):
+    def regression_line_plot(merged_df, x, y):
         """Plot regression line."""
-        sns.regplot(x=x, y=y, data=df)
+        sns.regplot(x=x, y=y, data=merged_df)
         plt.show()
 
     def leverage_plot(leverage):
