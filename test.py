@@ -1,4 +1,4 @@
-from csv_analysis import CSVAnalysis
+from csv_analysis import CSVAnalysis 
 import pandas as pd
 import os
 
@@ -12,7 +12,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Define a filepath for saving plots
-output_path = 'Downloads/'
+output_path = '/TA2-independence2024_Eishan/'
 os.makedirs(output_path, exist_ok=True)
 
 # Use the class methods
@@ -22,8 +22,8 @@ print(CSVAnalysis.dataframe_head(df))
 print("\nTail of DataFrame:")
 print(CSVAnalysis.dataframe_tail(df))
 
-print("\nShape of DataFrame:")
-print(CSVAnalysis.dataframe_shape(df))
+#print("\nShape of DataFrame:")
+#print(CSVAnalysis.dataframe_shape(df))
 
 print("\nInfo of DataFrame:")
 CSVAnalysis.dataframe_info(df)
