@@ -12,7 +12,9 @@ data = {
 df = pd.DataFrame(data)
 
 # Define a filepath for saving plots
-output_path = '/TA2-independence2024_Eishan/'
+
+output_path = 'Downloads/'
+
 os.makedirs(output_path, exist_ok=True)
 
 # Use the class methods
@@ -22,8 +24,10 @@ print(CSVAnalysis.dataframe_head(df))
 print("\nTail of DataFrame:")
 print(CSVAnalysis.dataframe_tail(df))
 
+
 #print("\nShape of DataFrame:")
 #print(CSVAnalysis.dataframe_shape(df))
+
 
 print("\nInfo of DataFrame:")
 CSVAnalysis.dataframe_info(df)
@@ -45,4 +49,6 @@ CSVAnalysis.barplot(df, 'A', 'D', output_path)
 CSVAnalysis.violinplot(df, 'A', 'C', output_path)
 CSVAnalysis.density_plot(df, 'C', output_path)
 
+
 print(f"Plots have been saved in the '{output_path}' directory.")
+
