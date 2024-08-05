@@ -1,17 +1,9 @@
 from csv_analysis import CSVAnalysis 
+from post_model_viz import PostModelViz
 import pandas as pd
 import os
 
-# Create a sample DataFrame
-data = {
-    'A': [1, 2, 3, 4, 5],
-    'B': [5, 4, 3, 2, 1],
-    'C': [2, 3, 4, 5, 6],
-    'D': [5, 6, 7, 8, 9]
-}
-df = pd.DataFrame(data)
-
-# Define a filepath for saving plots
+df = pd.read_csv("Copy of heart.csv")
 
 output_path = 'Plots/'
 
@@ -39,16 +31,15 @@ print("\nData Types of DataFrame:")
 print(CSVAnalysis.dataframe_dtypes(df))
 
 # Plotting examples
-CSVAnalysis.histplot(df, 'A', output_path)
-CSVAnalysis.boxplot(df, 'B', output_path)
-CSVAnalysis.scatterplot(df, 'A', 'B', output_path)
+CSVAnalysis.histplot(df, 'Age', output_path)
+CSVAnalysis.boxplot(df, 'Sex', output_path)
+CSVAnalysis.scatterplot(df, 'Age', 'Sex', output_path)
 CSVAnalysis.heatmap(df, output_path)
 CSVAnalysis.pairplot(df, output_path)
-CSVAnalysis.lineplot(df, 'A', 'C', output_path)
-CSVAnalysis.barplot(df, 'A', 'D', output_path)
-CSVAnalysis.violinplot(df, 'A', 'C', output_path)
-CSVAnalysis.density_plot(df, 'C', output_path)
+CSVAnalysis.lineplot(df, 'Age', 'Cholesterol', output_path)
+CSVAnalysis.barplot(df, 'Age', 'HeartDisease', output_path)
+CSVAnalysis.violinplot(df, 'Age', 'Cholesterol', output_path)
+CSVAnalysis.density_plot(df, 'Cholesterol', output_path)
 
 
 print(f"Plots have been saved in the '{output_path}' directory.")
-

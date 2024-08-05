@@ -50,7 +50,8 @@ class CSVAnalysis:
 
     def heatmap(merged_df, filepath):
         """Create a heatmap."""
-        sns.heatmap(merged_df.corr(), annot=True)
+        numeric_df = merged_df.select_dtypes(include='number')
+        sns.heatmap(numeric_df.corr(), annot=True)
         CSVAnalysis.save_fig(os.path.join(filepath, 'heatmap.png'))
 
     def pairplot(merged_df, filepath):
